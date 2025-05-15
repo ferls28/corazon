@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Alinea verticalmente */
+    align-items: center;     /* Centra en eje X */
+    justify-content: center; /* Centra en eje Y */
+    background: black;
+}
+
+.heart {
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    position: relative;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px #f20044;
+    animation: heart 0.6s linear infinite;
+    margin-bottom: 20px; /* Espacio debajo del corazón */
+}
+
+@keyframes heart {
+    0% { transform: rotate(-45deg) scale(1.7); }
+    80% { transform: rotate(-45deg) scale(1); }
+    100% { transform: rotate(-45deg) scale(0.8); }
+}
+
+.heart::before {
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    top: -35px;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: -10px -10px 90px #f20044;
+}
+
+.heart::after {
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    top: 0;
+    left: 35px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 90px #f20044;
+}
+
+h1, h2 {
+    color: aliceblue;
+    text-align: center;
+    font-family: cursive, sans-serif;
+    font-style: oblique;
+    margin: 0;
+    padding: 10px;
+}
